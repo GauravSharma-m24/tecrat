@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECRAT — We Build the Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="noise-overlay"></div>
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo glitch" data-text="TECRAT">TECRAT</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">// HOME</a></li>
+      <li><a href="#about" class="nav-link">// ABOUT</a></li>
+      <li><a href="#services" class="nav-link">// SERVICES</a></li>
+      <li><a href="#stack" class="nav-link">// STACK</a></li>
+      <li><a href="#contact" class="nav-link">// CONTACT</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">SYS ONLINE</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section hero" id="home">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-label">[ ESTABLISHED 2024 · DIGITAL ARCHITECTS ]</div>
+      <h1 class="hero-title">
+        <span class="line" id="heroLine1">WE ARE</span>
+        <span class="line hero-name glitch" data-text="TECRAT">TECRAT</span>
+        <span class="line hero-sub">ENGINEERING TOMORROW</span>
+      </h1>
+      <p class="hero-tagline"><span class="type-text" id="typeText"></span><span class="cursor-blink">_</span></p>
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary"><span class="btn-border"></span>GET STARTED</a>
+        <a href="#services" class="btn-ghost">VIEW STACK →</a>
+      </div>
+    </div>
+    <div class="hero-grid-lines"></div>
+    <div class="scroll-indicator">SCROLL <span class="scroll-arrow">↓</span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-label">[ 001 · ABOUT ]</div>
+    <div class="about-container">
+      <div class="about-left">
+        <h2 class="section-title">YOUR IDEAS.<br /><span class="accent">OUR EXPERTISE.</span></h2>
+        <p class="about-text">We are a dedicated team of developers, designers, and strategists passionate about
+          building exceptional digital experiences. From custom web applications to mobile apps, we turn your vision
+          into reality.</p>
+        <p class="about-text">Our approach blends clean code with beautiful design, ensuring every project is not only
+          visually stunning but also highly functional and user-friendly.</p>
+        <div class="about-badges">
+          <span class="badge">WEB APPS</span>
+          <span class="badge">MOBILE APPS</span>
+          <span class="badge">E-COMMERCE</span>
+          <span class="badge">API DEV</span>
+          <span class="badge">UI/UX DESIGN</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="t-btn t-red"></span>
+            <span class="t-btn t-yellow"></span>
+            <span class="t-btn t-green"></span>
+            <span class="t-title">tecrat@core ~ about</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">></span> who_are_we</div>
+            <div class="t-line t-out">TECRAT DIGITAL AGENCY</div>
+            <div class="t-line"><span class="t-prompt">></span> cat mission.txt</div>
+            <div class="t-line t-out">Deliver excellence. Build scalable solutions.</div>
+            <div class="t-line t-out">Focus on user experience and reliable performance.</div>
+            <div class="t-line"><span class="t-prompt">></span> ls ./expertise</div>
+            <div class="t-line t-out accent-text">Web · Apps · AI · E-Commerce · Services</div>
+            <div class="t-line"><span class="t-prompt">></span> ./start_project.sh <span class="cursor-blink">_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="section-label">[ 002 · SERVICES ]</div>
+    <h2 class="section-title center">WHAT WE <span class="accent">DEPLOY</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="card-index">01</div>
+        <div class="card-icon">⬡</div>
+        <h3 class="card-title">WEB APPLICATIONS</h3>
+        <p class="card-desc">Building fast, interactive, and user-friendly web apps tailored to your business needs.</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="card-index">02</div>
+        <div class="card-icon">◈</div>
+        <h3 class="card-title">APP DEVELOPMENT</h3>
+        <p class="card-desc">Engaging and intuitive mobile applications designed for a seamless user experience.</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="card-index">03</div>
+        <div class="card-icon">⟁</div>
+        <h3 class="card-title">API DEVELOPMENT</h3>
+        <p class="card-desc">Connecting services seamlessly with custom APIs so your platforms talk to each other
+          effortlessly.</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="card-index">04</div>
+        <div class="card-icon">⬢</div>
+        <h3 class="card-title">DATABASES (MYSQL)</h3>
+        <p class="card-desc">Designing organized, fast, and secure database structures for your applications to run
+          smoothly.</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="card-index">05</div>
+        <div class="card-icon">⬟</div>
+        <h3 class="card-title">SERVER & DEVOPS</h3>
+        <p class="card-desc">Setting up reliable servers and deployment pipelines to keep your app online and running
+          fast.</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="card-index">06</div>
+        <div class="card-icon">◬</div>
+        <h3 class="card-title">SITE MAINTENANCE</h3>
+        <p class="card-desc">Ongoing support, updates, and optimization to ensure your digital presence is always at its
+          best.</p>
+        <div class="card-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section stack" id="stack">
+    <div class="section-label">[ 003 · TECH STACK ]</div>
+    <h2 class="section-title center">CORE <span class="accent">ARSENAL</span></h2>
+    <p class="section-sub center">The technologies that power our solutions.</p>
+    <div class="stack-slider">
+      <div class="stack-track">
+        <a href="https://react.dev/" target="_blank" class="stack-logo" data-name="REACT"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" /></a>
+        <a href="https://nextjs.org/" target="_blank" class="stack-logo" data-name="NEXT.JS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+            alt="Next.js" /></a>
+        <a href="https://nodejs.org/" target="_blank" class="stack-logo" data-name="NODE.JS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+            alt="Node.js" /></a>
+        <a href="https://www.typescriptlang.org/" target="_blank" class="stack-logo" data-name="TYPESCRIPT"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            alt="TypeScript" /></a>
+        <a href="https://aws.amazon.com/" target="_blank" class="stack-logo" data-name="AWS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+            alt="AWS" /></a>
+        <a href="https://www.postgresql.org/" target="_blank" class="stack-logo" data-name="POSTGRESQL"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL" /></a>
+        <a href="https://graphql.org/" target="_blank" class="stack-logo" data-name="GRAPHQL"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
+            alt="GraphQL" /></a>
+        <a href="https://www.python.org/" target="_blank" class="stack-logo" data-name="PYTHON"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            alt="Python" /></a>
+        <a href="https://flutter.dev/" target="_blank" class="stack-logo" data-name="FLUTTER"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+            alt="Flutter" /></a>
+      </div>
+      <div class="stack-track">
+        <a href="https://react.dev/" target="_blank" class="stack-logo" data-name="REACT"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" /></a>
+        <a href="https://nextjs.org/" target="_blank" class="stack-logo" data-name="NEXT.JS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+            alt="Next.js" /></a>
+        <a href="https://nodejs.org/" target="_blank" class="stack-logo" data-name="NODE.JS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+            alt="Node.js" /></a>
+        <a href="https://www.typescriptlang.org/" target="_blank" class="stack-logo" data-name="TYPESCRIPT"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            alt="TypeScript" /></a>
+        <a href="https://aws.amazon.com/" target="_blank" class="stack-logo" data-name="AWS"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+            alt="AWS" /></a>
+        <a href="https://www.postgresql.org/" target="_blank" class="stack-logo" data-name="POSTGRESQL"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL" /></a>
+        <a href="https://graphql.org/" target="_blank" class="stack-logo" data-name="GRAPHQL"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
+            alt="GraphQL" /></a>
+        <a href="https://www.python.org/" target="_blank" class="stack-logo" data-name="PYTHON"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            alt="Python" /></a>
+        <a href="https://flutter.dev/" target="_blank" class="stack-logo" data-name="FLUTTER"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+            alt="Flutter" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section why-us" id="why-us">
+    <div class="section-label">[ 004 · WHY CHOOSE US ]</div>
+    <h2 class="section-title center">WHY CLIENTS <span class="accent">TRUST US</span></h2>
+    <p class="section-sub center">Numbers don't lie. Results speak louder.</p>
+
+    <!-- Stats Numbers Row -->
+    <div class="why-stats-row">
+      <div class="why-stat-item">
+        <div class="why-stat-top"><span class="why-stat-num" data-count="50">0</span><span
+            class="why-stat-suffix">+</span></div>
+        <span class="why-stat-label">PROJECTS DELIVERED</span>
+      </div>
+      <div class="why-stat-divider">|</div>
+      <div class="why-stat-item">
+        <div class="why-stat-top"><span class="why-stat-num" data-count="100">0</span><span
+            class="why-stat-suffix">%</span></div>
+        <span class="why-stat-label">CLIENT SATISFACTION</span>
+      </div>
+      <div class="why-stat-divider">|</div>
+      <div class="why-stat-item">
+        <div class="why-stat-top"><span class="why-stat-num" data-count="24">0</span><span
+            class="why-stat-suffix">/7</span></div>
+        <span class="why-stat-label">SUPPORT AVAILABLE</span>
+      </div>
+      <div class="why-stat-divider">|</div>
+      <div class="why-stat-item">
+        <div class="why-stat-top"><span class="why-stat-num" data-count="2">0</span><span
+            class="why-stat-suffix">+</span></div>
+        <span class="why-stat-label">YEARS EXPERIENCE</span>
+      </div>
+    </div>
+
+    <!-- Why Cards Grid -->
+    <div class="why-boxes">
+      <div class="why-box reveal">
+        <div class="why-icon">💬</div>
+        <h4 class="why-title">Clear Communication</h4>
+        <p class="why-desc">No geek-speak. We explain everything in plain language so you're always in the loop — from
+          kickoff to launch and beyond.</p>
+      </div>
+      <div class="why-box reveal">
+        <div class="why-icon">⚡</div>
+        <h4 class="why-title">Fast Delivery</h4>
+        <p class="why-desc">We respect your deadlines and deliver high-quality work on time — without cutting corners or
+          making excuses.</p>
+      </div>
+      <div class="why-box reveal">
+        <div class="why-icon">🛠️</div>
+        <h4 class="why-title">Ongoing Support</h4>
+        <p class="why-desc">We don't disappear after launch. We're here to keep your site updated, secure, and running
+          smoothly long-term.</p>
+      </div>
+      <div class="why-box reveal">
+        <div class="why-icon">💰</div>
+        <h4 class="why-title">Transparent Pricing</h4>
+        <p class="why-desc">No hidden fees, no surprises. We provide clear costs upfront so you can plan your budget
+          with confidence.</p>
+      </div>
+      <div class="why-box reveal">
+        <div class="why-icon">🔒</div>
+        <h4 class="why-title">Security First</h4>
+        <p class="why-desc">Every project is built with security best practices baked in — not bolted on. Your data and
+          users are always protected.</p>
+      </div>
+      <div class="why-box reveal">
+        <div class="why-icon">📈</div>
+        <h4 class="why-title">Scalable Solutions</h4>
+        <p class="why-desc">We architect systems that grow with your business. Start small, scale to millions — the
+          foundation is always solid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS — Dual Train -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section-label">[ 005 · TESTIMONIALS ]</div>
+    <h2 class="section-title center">CLIENT <span class="accent">STORIES</span></h2>
+    <p class="section-sub center">Don't just take our word for it.</p>
+
+    <div class="testimonial-train-wrap">
+      <!-- Row 1: left to right -->
+      <div class="testimonial-train train-ltr">
+        <div class="testimonial-track">
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Tecrat transformed our online presence. The new app is incredibly fast and our users
+              love it. Couldn't be happier with the result!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">SJ</div>
+              <div>
+                <div class="tcard-name">Sarah Johnson</div>
+                <div class="tcard-role">CEO, RetailFlow</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">They explained the whole process simply and delivered exactly what they promised. An
+              absolute breeze to work with from start to finish.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">ML</div>
+              <div>
+                <div class="tcard-name">Michael Lee</div>
+                <div class="tcard-role">Founder, NovaSpark</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">The customer support is exceptional. Any updates we need are handled quickly and
+              professionally. Truly a reliable partner.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">EW</div>
+              <div>
+                <div class="tcard-name">Emma Watson</div>
+                <div class="tcard-role">Director, PulseMedia</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Outstanding quality and speed. They built our e-commerce platform in under 3 weeks and
+              it handled our launch traffic perfectly.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">RK</div>
+              <div>
+                <div class="tcard-name">Raj Kapoor</div>
+                <div class="tcard-role">Co-Founder, ShopNest</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Our API integrations were a nightmare until Tecrat stepped in. Clean, well-documented,
+              and blazing fast. Highly recommended.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">AP</div>
+              <div>
+                <div class="tcard-name">Aisha Patel</div>
+                <div class="tcard-role">CTO, DataBridge</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <!-- Duplicates for seamless loop -->
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Tecrat transformed our online presence. The new app is incredibly fast and our users
+              love it. Couldn't be happier with the result!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">SJ</div>
+              <div>
+                <div class="tcard-name">Sarah Johnson</div>
+                <div class="tcard-role">CEO, RetailFlow</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">They explained the whole process simply and delivered exactly what they promised. An
+              absolute breeze to work with from start to finish.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">ML</div>
+              <div>
+                <div class="tcard-name">Michael Lee</div>
+                <div class="tcard-role">Founder, NovaSpark</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">The customer support is exceptional. Any updates we need are handled quickly and
+              professionally. Truly a reliable partner.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">EW</div>
+              <div>
+                <div class="tcard-name">Emma Watson</div>
+                <div class="tcard-role">Director, PulseMedia</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Outstanding quality and speed. They built our e-commerce platform in under 3 weeks and
+              it handled our launch traffic perfectly.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">RK</div>
+              <div>
+                <div class="tcard-name">Raj Kapoor</div>
+                <div class="tcard-role">Co-Founder, ShopNest</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote">"</div>
+            <p class="tcard-text">Our API integrations were a nightmare until Tecrat stepped in. Clean, well-documented,
+              and blazing fast. Highly recommended.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">AP</div>
+              <div>
+                <div class="tcard-name">Aisha Patel</div>
+                <div class="tcard-role">CTO, DataBridge</div>
+              </div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: right to left -->
+      <div class="testimonial-train train-rtl">
+        <div class="testimonial-track">
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">We needed a complete redesign under a tight deadline. Tecrat delivered it beautifully,
+              on time, and under budget. Impressive!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">DM</div>
+              <div>
+                <div class="tcard-name">David Mitchell</div>
+                <div class="tcard-role">MD, LuxeStay Hotels</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">Their DevOps setup reduced our deployment time by 80%. The automation pipelines they
+              built are an absolute dream to work with.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">FN</div>
+              <div>
+                <div class="tcard-name">Fatima Noor</div>
+                <div class="tcard-role">Lead Engineer, CloudStack</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">I had zero technical knowledge but they made everything so simple. My website is
+              gorgeous and my sales have literally doubled!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">LC</div>
+              <div>
+                <div class="tcard-name">Lisa Chen</div>
+                <div class="tcard-role">Owner, BloomBoutique</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">The mobile app has a 4.9 star rating on the App Store. Users say it's the smoothest
+              experience in our entire category.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">KS</div>
+              <div>
+                <div class="tcard-name">Karan Shah</div>
+                <div class="tcard-role">Product Manager, FitTrack</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">Transparent pricing, honest timelines, and zero drama. Tecrat is the tech partner
+              every business wishes they had from day one.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">OA</div>
+              <div>
+                <div class="tcard-name">Omar Ansari</div>
+                <div class="tcard-role">Director, FinBridge</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <!-- Duplicates -->
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">We needed a complete redesign under a tight deadline. Tecrat delivered it beautifully,
+              on time, and under budget. Impressive!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">DM</div>
+              <div>
+                <div class="tcard-name">David Mitchell</div>
+                <div class="tcard-role">MD, LuxeStay Hotels</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">Their DevOps setup reduced our deployment time by 80%. The automation pipelines they
+              built are an absolute dream to work with.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">FN</div>
+              <div>
+                <div class="tcard-name">Fatima Noor</div>
+                <div class="tcard-role">Lead Engineer, CloudStack</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">I had zero technical knowledge but they made everything so simple. My website is
+              gorgeous and my sales have literally doubled!</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">LC</div>
+              <div>
+                <div class="tcard-name">Lisa Chen</div>
+                <div class="tcard-role">Owner, BloomBoutique</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">The mobile app has a 4.9 star rating on the App Store. Users say it's the smoothest
+              experience in our entire category.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">KS</div>
+              <div>
+                <div class="tcard-name">Karan Shah</div>
+                <div class="tcard-role">Product Manager, FitTrack</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-quote red-q">"</div>
+            <p class="tcard-text">Transparent pricing, honest timelines, and zero drama. Tecrat is the tech partner
+              every business wishes they had from day one.</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar red-av">OA</div>
+              <div>
+                <div class="tcard-name">Omar Ansari</div>
+                <div class="tcard-role">Director, FinBridge</div>
+              </div>
+            </div>
+            <div class="tcard-stars red-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="section-label">[ 006 · FAQ ]</div>
+    <h2 class="section-title center">FREQUENTLY ASKED <span class="accent">QUESTIONS</span></h2>
+    <p class="section-sub center">Got questions? We've got answers.</p>
+
+    <div class="faq-container">
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">How long does it take to build a website or app?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">It depends on complexity, but most standard projects take between 2 to 6 weeks. Complex apps
+            with custom backends can take 8–12 weeks. We'll give you a clear, honest timeline before we start so you can
+            plan accordingly.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Will my website work on mobile phones and tablets?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Absolutely! Every project we build is 100% responsive — it looks and works perfectly on all
+            screen sizes. We test across multiple real devices before any delivery, no exceptions.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Do you provide maintenance and support after launch?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Yes! We offer flexible ongoing support and maintenance plans to keep your product secure,
+            fast, and up to date. Whether it's a small content change or a major feature addition, we've got you covered
+            — we don't do disappearing acts.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Do I need to manage my own hosting and domain?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Not unless you want to! We can handle domain registration, hosting setup, SSL certificates,
+            and server configuration for you. If you have existing infrastructure, we can work with that too — no
+            lock-in, ever.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Can you redesign or upgrade my existing older website?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Yes, frequently! We love modernization projects. We can overhaul the design, fix performance
+            issues, improve SEO, migrate to modern tech stacks, and ensure everything meets current web standards —
+            without losing your existing data or content.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">How much does a project cost?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Every project is unique, so we provide custom quotes. We're completely transparent — no
+            hidden fees, no surprise invoices. After an initial discovery call, we'll send you a detailed proposal with
+            a full breakdown before anything starts.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Will I be able to update the website myself after it's done?</h3><span
+            class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Yes! If you need a CMS, we can integrate one so you can update text, images, blogs, and
+            products yourself without touching code. We also provide a handover session and documentation so you feel
+            confident managing your site.</p>
+        </div>
+      </div>
+      <div class="faq-item accordion">
+        <button class="faq-toggle">
+          <h3 class="faq-q">Do you sign NDAs and keep our project confidential?</h3><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p class="faq-a">Absolutely. We take confidentiality very seriously and are happy to sign an NDA before any
+            discussions begin. Your ideas, data, and business logic stay strictly between us — we never share or reuse
+            client code or concepts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="section-label">[ 007 · CONTACT ]</div>
+    <div class="contact-container">
+      <div class="contact-left">
+        <h2 class="section-title">READY TO<br /><span class="accent">LAUNCH?</span></h2>
+        <p class="contact-desc">Drop us a message. We're ready to discuss your next project and help your business grow.
+          Let's create something amazing together.</p>
+        <div class="contact-info">
+          <div class="contact-item"><span class="ci-label">EMAIL ></span><span class="ci-val">tecrat001@gmail.com</span>
+          </div>
+          <div class="contact-item"><span class="ci-label">PHONE ></span><span class="ci-val">+91 98765 43210</span>
+          </div>
+          <div class="contact-item"><span class="ci-label">WHATSAPP ></span><span class="ci-val">+91 98765 43210</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="contact-form-wrap">
+          <div class="form-field"><label class="form-label">NAME</label><input class="form-input" type="text"
+              placeholder="Your Name" /></div>
+          <div class="form-field"><label class="form-label">EMAIL</label><input class="form-input" type="email"
+              placeholder="you@domain.com" /></div>
+          <div class="form-field"><label class="form-label">MESSAGE</label><textarea class="form-input form-textarea"
+              placeholder="How can we help you?"></textarea></div>
+          <button class="btn-primary btn-full" id="sendBtn"><span class="btn-border"></span>TRANSMIT →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo glitch" data-text="TECRAT">TECRAT</div>
+      <div class="footer-links">
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-copy">© 2025 TECRAT AGENCY. ALL RIGHTS RESERVED.</div>
+      <div class="footer-socials">
+        <!-- Instagram real SVG icon -->
+        <a href="https://instagram.com" target="_blank" class="social-icon-link instagram" title="Instagram"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+        <!-- LinkedIn real SVG icon -->
+        <a href="https://linkedin.com" target="_blank" class="social-icon-link linkedin" title="LinkedIn"
+          aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919876543210" class="floating-chat" target="_blank" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.628 1.221.822 1.394.908.173.087.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.2.043.073.043.423-.101.827z" />
+      <path
+        d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2 22l5.2-1.32A9.954 9.954 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 01-4.073-1.115l-.286-.17-2.975.755.784-2.865-.187-.295A7.97 7.97 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
