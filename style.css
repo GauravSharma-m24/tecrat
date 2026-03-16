@@ -1,17 +1,18 @@
 /* ============================================
    TECRAT — style.css  (full updated)
-   Two-color palette: #0aff9d (green) + #ff2d55 (red)
+   Palette: #00ffff (aqua), #ffb347 (orange), #ff00cc (pinkish)
    ============================================ */
 
 :root {
-    --green: #0aff9d;
-    --red: #ff2d55;
+    --green: #00ffff;
+    --orange: #ffb347;
+    --pinkish: #ff00cc;
     --bg: #020408;
     --bg2: #060c14;
     --bg3: #0a1220;
     --text: #c8d8e8;
     --text-dim: #4a6070;
-    --border: rgba(10, 255, 157, 0.15);
+    --border: rgba(0, 255, 255, 0.15);
     --font-main: 'Orbitron', monospace;
     --font-mono: 'Share Tech Mono', monospace;
 }
@@ -92,7 +93,7 @@ body {
 .cursor-ring.hovered {
     width: 50px;
     height: 50px;
-    border-color: var(--red);
+    border-color: var(--pinkish);
     opacity: 1;
 }
 
@@ -194,7 +195,7 @@ body {
 .section-label {
     font-size: 0.65rem;
     letter-spacing: 0.3em;
-    color: var(--red);
+    color: var(--orange);
     margin-bottom: 2rem;
 }
 
@@ -241,7 +242,7 @@ body {
 }
 
 .glitch::before {
-    color: var(--red);
+    color: var(--pinkish);
     clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
     animation: glitch-before 4s infinite steps(1);
 }
@@ -328,7 +329,7 @@ body {
 
 .hero-sub {
     font-size: clamp(0.7rem, 2vw, 1rem);
-    color: var(--red);
+    color: var(--orange);
     letter-spacing: 0.5em;
     animation: fadeUp 0.8s ease 0.8s both;
 }
@@ -387,8 +388,8 @@ body {
 }
 
 .btn-primary:hover {
-    background: var(--red);
-    box-shadow: 0 0 30px rgba(255, 45, 85, 0.5);
+    background: var(--pinkish);
+    box-shadow: 0 0 30px rgba(255, 0, 204, 0.5);
     transform: translateY(-2px);
 }
 
@@ -500,7 +501,7 @@ body {
 }
 
 .t-red {
-    background: var(--red);
+    background: var(--orange);
 }
 
 .t-yellow {
@@ -600,7 +601,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--green), var(--red));
+    background: linear-gradient(90deg, var(--green), var(--pinkish));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s;
@@ -632,7 +633,7 @@ body {
 .card-index {
     font-family: var(--font-main);
     font-size: 0.65rem;
-    color: var(--red);
+    color: var(--orange);
     letter-spacing: 0.3em;
     margin-bottom: 1.5rem;
 }
@@ -647,7 +648,7 @@ body {
 
 .service-card:nth-child(even) .card-icon {
     animation-delay: 1.5s;
-    color: var(--red);
+    color: var(--pinkish);
 }
 
 .card-title {
@@ -788,7 +789,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--green), var(--red), var(--green));
+    background: linear-gradient(90deg, var(--green), var(--orange), var(--pinkish), var(--green));
     background-size: 200% 100%;
     animation: gradientSlide 3s linear infinite;
 }
@@ -856,7 +857,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--green), var(--red));
+    background: linear-gradient(90deg, var(--green), var(--orange));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s;
@@ -976,7 +977,7 @@ body {
 }
 
 .tcard-quote.red-q {
-    color: var(--red);
+    color: var(--orange);
 }
 
 .tcard-text {
@@ -1011,9 +1012,9 @@ body {
 }
 
 .tcard-avatar.red-av {
-    background: linear-gradient(135deg, var(--bg), #200a14);
-    border-color: rgba(255, 45, 85, 0.4);
-    color: var(--red);
+    background: linear-gradient(135deg, var(--bg), #300a20);
+    border-color: rgba(255, 0, 204, 0.4);
+    color: var(--pinkish);
 }
 
 .tcard-name {
@@ -1037,7 +1038,7 @@ body {
 }
 
 .tcard-stars.red-stars {
-    color: var(--red);
+    color: var(--orange);
 }
 
 /* ── FAQ ── */
@@ -1103,7 +1104,7 @@ body {
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-    color: var(--red);
+    color: var(--pinkish);
 }
 
 .faq-content {
