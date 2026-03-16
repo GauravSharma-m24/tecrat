@@ -39,7 +39,7 @@
     // ── MATRIX CANVAS ──
     const canvas = $('#matrixCanvas');
     const ctx = canvas.getContext('2d');
-    const GREEN = '#0aff9d', RED = '#ff2d55';
+    const GREEN = '#00ffff', PINKISH = '#9500ffff', ORANGE = '#ffa347ff';
     const FONT_SIZE = 13;
     const CHARS = '01アイウエオカキクケコTECRATABCDEF0123456789!@#$%^&*<>/\\;:';
 
@@ -57,7 +57,7 @@
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         drops.forEach((y, i) => {
             const char = CHARS[Math.floor(Math.random() * CHARS.length)];
-            ctx.fillStyle = Math.random() > 0.97 ? RED : GREEN;
+            ctx.fillStyle = Math.random() > 0.98 ? PINKISH : GREEN;
             ctx.font = FONT_SIZE + 'px "Share Tech Mono", monospace';
             ctx.fillText(char, i * FONT_SIZE, y * FONT_SIZE);
             if (y * FONT_SIZE > canvas.height && Math.random() > 0.975) drops[i] = 0;
@@ -166,7 +166,7 @@
             const inputs = $$('.form-input');
             const ok = [...inputs].every(i => i.value.trim() !== '');
             if (!ok) {
-                sendBtn.style.background = 'var(--red)';
+                sendBtn.style.background = 'var(--orange)';
                 sendBtn.innerHTML = '<span class="btn-border"></span>FILL ALL FIELDS ✕';
                 setTimeout(() => { sendBtn.style.background = ''; sendBtn.innerHTML = '<span class="btn-border"></span>TRANSMIT →'; }, 2000);
                 return;
@@ -217,7 +217,7 @@
     });
 
     // ── CONSOLE EGG ──
-    console.log('%c TECRAT ', 'background:#0aff9d;color:#020408;font-weight:900;font-size:2rem;padding:0.5rem 1rem;');
-    console.log('%c We build the future. tecrat001@gmail.com ', 'color:#0aff9d;font-size:0.9rem;');
+    console.log('%c TECRAT ', 'background:#00ffff;color:#020408;font-weight:900;font-size:2rem;padding:0.5rem 1rem;');
+    console.log('%c We build the future. tecrat001@gmail.com ', 'color:#00ffff;font-size:0.9rem;');
 
 })();
