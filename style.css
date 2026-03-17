@@ -121,11 +121,20 @@ body {
 }
 
 .nav-logo {
-    font-family: var(--font-main);
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: var(--green);
-    letter-spacing: 0.3em;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo:hover .logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px var(--green));
 }
 
 .nav-links {
@@ -1232,11 +1241,12 @@ body {
 }
 
 .footer-logo {
-    font-family: var(--font-main);
-    font-size: 1rem;
-    font-weight: 900;
-    color: var(--green);
-    letter-spacing: 0.3em;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo .logo-img {
+    height: 105px;
 }
 
 .footer-copy {
