@@ -126,7 +126,7 @@ body {
 }
 
 .logo-img {
-    height: 45px;
+    height: 65px;
     width: auto;
     display: block;
     transition: transform 0.3s ease, filter 0.3s ease;
