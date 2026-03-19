@@ -19,7 +19,7 @@
         ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
         requestAnimationFrame(animateRing);
     })();
-    $$('a, button, .service-card, .why-box, .badge, .nav-link, .tcard, .faq-toggle').forEach(el => {
+    $$('a, button, .service-card, .why-box, .badge, .nav-link, .tcard, .faq-toggle, .pricing-tab, .pricing-card').forEach(el => {
         el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
         el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
     });
@@ -129,9 +129,9 @@
     const revealTargets = $$(
         '.section-title, .section-label, .about-text, .about-badges, .terminal-window, ' +
         'contact-desc, .contact-info, .contact-form-wrap, .section-sub, ' +
-        '.why-stat-item, .why-stats-row, .tcard'
+        '.why-stat-item, .why-stats-row, .tcard, .pricing-tabs'
     );
-    const revealCards = $$('.service-card, .why-box');
+    const revealCards = $$('.service-card, .why-box, .pricing-card');
 
     revealTargets.forEach(el => el.classList.add('reveal'));
     revealCards.forEach((el, i) => {
@@ -224,11 +224,27 @@
     });
 
     // ── SERVICE CARD MOUSE GLOW ──
-    $$('.service-card').forEach(card => {
+    $$('.service-card, .pricing-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const r = card.getBoundingClientRect();
+            // Using --x/--y for pricing-card to match CSS, and --mouse-x/--mouse-y for service-card
             card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
             card.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+            card.style.setProperty('--x', ((e.clientX - r.left) / r.width * 100) + '%');
+            card.style.setProperty('--y', ((e.clientY - r.top) / r.height * 100) + '%');
+        });
+    });
+
+    // ── PRICING TABS ──
+    const pTabs = $$('.pricing-tab');
+    const pSections = $$('.pricing-category-section');
+    pTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-target');
+            pTabs.forEach(t => t.classList.remove('active'));
+            pSections.forEach(s => s.classList.remove('active'));
+            tab.classList.add('active');
+            $('#' + target).classList.add('active');
         });
     });
 
