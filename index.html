@@ -228,7 +228,7 @@
     <!-- Stats Numbers Row -->
     <div class="why-stats-row">
       <div class="why-stat-item">
-        <div class="why-stat-top"><span class="why-stat-num" data-count="30">0</span><span
+        <div class="why-stat-top"><span class="why-stat-num" data-count="10">0</span><span
             class="why-stat-suffix">+</span></div>
         <span class="why-stat-label">PROJECTS DELIVERED</span>
       </div>
@@ -677,22 +677,25 @@
         <div class="contact-info">
           <div class="contact-item"><span class="ci-label">EMAIL ></span><span class="ci-val">tecrat001@gmail.com</span>
           </div>
-          <div class="contact-item"><span class="ci-label">PHONE ></span><span class="ci-val">+91 98765 43210</span>
+          <div class="contact-item"><span class="ci-label">PHONE ></span><span class="ci-val">+91 9335163957, +91
+              9599417028</span>
           </div>
-          <div class="contact-item"><span class="ci-label">WHATSAPP ></span><span class="ci-val">+91 98765 43210</span>
+          <div class="contact-item"><span class="ci-label">WHATSAPP ></span><span class="ci-val">+91 9335163957, +91
+              9599417028</span>
           </div>
         </div>
       </div>
       <div class="contact-right">
-        <div class="contact-form-wrap">
-          <div class="form-field"><label class="form-label">NAME</label><input class="form-input" type="text"
-              placeholder="Your Name" /></div>
-          <div class="form-field"><label class="form-label">EMAIL</label><input class="form-input" type="email"
-              placeholder="you@domain.com" /></div>
+        <form class="contact-form-wrap" id="contactForm" action="https://formspree.io/f/xjgalbjk" method="POST">
+          <div class="form-field"><label class="form-label">NAME</label><input class="form-input" name="name"
+              type="text" placeholder="Your Name" required /></div>
+          <div class="form-field"><label class="form-label">EMAIL</label><input class="form-input" name="email"
+              type="email" placeholder="you@domain.com" required /></div>
           <div class="form-field"><label class="form-label">MESSAGE</label><textarea class="form-input form-textarea"
-              placeholder="How can we help you?"></textarea></div>
-          <button class="btn-primary btn-full" id="sendBtn"><span class="btn-border"></span>TRANSMIT →</button>
-        </div>
+              name="message" placeholder="How can we help you?" required></textarea></div>
+          <button type="submit" class="btn-primary btn-full" id="sendBtn"><span class="btn-border"></span>TRANSMIT
+            →</button>
+        </form>
       </div>
     </div>
   </section>

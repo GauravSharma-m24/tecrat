@@ -160,22 +160,46 @@
     sections.forEach(s => secObserver.observe(s));
 
     // ── FORM ──
+    const contactForm = $('#contactForm');
     const sendBtn = $('#sendBtn');
-    if (sendBtn) {
-        sendBtn.addEventListener('click', () => {
-            const inputs = $$('.form-input');
-            const ok = [...inputs].every(i => i.value.trim() !== '');
-            if (!ok) {
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = new FormData(contactForm);
+
+            // Transmitting state
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<span class="btn-border"></span>TRANSMITTING...';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    sendBtn.style.background = 'var(--green)';
+                    sendBtn.innerHTML = '<span class="btn-border"></span>SIGNAL SENT ✓';
+                    sendBtn.style.color = 'var(--bg)';
+                    contactForm.reset();
+                } else {
+                    const result = await response.json();
+                    console.error('Formspree Error:', result);
+                    throw new Error('Transmission failed');
+                }
+            } catch (err) {
+                console.error('Submission Error:', err);
                 sendBtn.style.background = 'var(--orange)';
-                sendBtn.innerHTML = '<span class="btn-border"></span>FILL ALL FIELDS ✕';
-                setTimeout(() => { sendBtn.style.background = ''; sendBtn.innerHTML = '<span class="btn-border"></span>TRANSMIT →'; }, 2000);
-                return;
+                sendBtn.innerHTML = '<span class="btn-border"></span>FAILED ✕';
+            } finally {
+                setTimeout(() => {
+                    sendBtn.style.background = '';
+                    sendBtn.style.color = '';
+                    sendBtn.innerHTML = '<span class="btn-border"></span>TRANSMIT →';
+                    sendBtn.disabled = false;
+                }, 3000);
             }
-            sendBtn.style.background = 'var(--green)';
-            sendBtn.innerHTML = '<span class="btn-border"></span>SIGNAL SENT ✓';
-            sendBtn.style.color = 'var(--bg)';
-            inputs.forEach(i => i.value = '');
-            setTimeout(() => { sendBtn.style.background = ''; sendBtn.style.color = ''; sendBtn.innerHTML = '<span class="btn-border"></span>TRANSMIT →'; }, 3000);
         });
     }
 
