@@ -1246,7 +1246,8 @@ body {
 }
 
 .footer-logo .logo-img {
-    height: 105px;
+    height: 85px;
+    width: auto;
 }
 
 .footer-copy {
