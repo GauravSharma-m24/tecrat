@@ -256,8 +256,21 @@
         });
     });
 
-    // ── CONSOLE EGG ──
-    console.log('%c TECRAT ', 'background:#00ffff;color:#020408;font-weight:900;font-size:2rem;padding:0.5rem 1rem;');
-    console.log('%c We build the future. tecrat001@gmail.com ', 'color:#00ffff;font-size:0.9rem;');
+    // ── MOBILE MENU ──
+    const navToggle = $('#navToggle');
+    const navLinksList = $('.nav-links');
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinksList.classList.toggle('active');
+        });
+    }
+
+    $$('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle && navToggle.classList.remove('active');
+            navLinksList && navLinksList.classList.remove('active');
+        });
+    });
 
 })();
